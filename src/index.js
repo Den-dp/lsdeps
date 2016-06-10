@@ -25,7 +25,7 @@ module.exports = function lsdeps() {
             } else {
                 var result = collectSetOfSortedDependencies(parsedData.dependencies);
                 result.forEach(function (dep) {
-                    // process.stdout.write(`${dep}\n`);
+                    process.stdout.write(`${dep}\n`);
                 });
                 resolve(result);
             }
