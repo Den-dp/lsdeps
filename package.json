@@ -1,0 +1,56 @@
+{
+  "name": "lsdeps",
+  "version": "0.0.0-semantically-released",
+  "description": "Provides flat variant of `npm ls` command.",
+  "bin": {
+    "lsdeps": "./cli/lsdeps.js"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel src -d dist",
+    "test": "echo \"Error: no test specified\"",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "files": [
+    "./cli/lsdeps.js",
+    "./dist/index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Den-dp/lsdeps.git"
+  },
+  "keywords": [
+    "ls",
+    "list",
+    "flat",
+    "dependencies",
+    "node_modules",
+    "shrinkwrap"
+  ],
+  "author": "Denis Bendrikov <Denis.Bendrikov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Den-dp/lsdeps/issues"
+  },
+  "homepage": "https://github.com/Den-dp/lsdeps#readme",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "commitizen": "^2.8.2",
+    "cz-conventional-changelog": "^1.1.6",
+    "ghooks": "^1.2.3",
+    "rimraf": "^2.5.2",
+    "semantic-release": "^4.3.5",
+    "validate-commit-msg": "^2.6.1"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg && npm run test"
+    },
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
