@@ -14,8 +14,9 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
-    "./cli/lsdeps.js",
-    "./dist/index.js"
+    "cli/lsdeps.js",
+    "dist/index.js",
+    "README.md"
   ],
   "repository": {
     "type": "git",
